@@ -1,39 +1,42 @@
 import java.util.ArrayList;
 
-public class longestSubstring {
+public class MyClass {
     public static void main(String args[]) {
-        String s= "pwwkew1";
-        String output = "";
+        //String s= "abcabcbb";
+        String s = "pwwkew";
+        String output = s.substring(0,1);
         ArrayList<String> temp = new ArrayList<String>();
         Boolean check = true;
         aa:
         for(int i=1; i< s.length(); i++)
         {
-            if(((s.substring(i,i+1)).equals(s.substring(i-1,i))))
+            bb:
+            for(int j=0 ; j<output.length(); j++)
             {
-                output = output + s.substring(i-1,i);
+                if((s.substring(i,i+1)).equals(output.substring(j,j+1)))
+                {
+                    check = false;
+                    break bb;
+                }
+            }
+            if(check == false)
+            {
                 temp.add(output);
-                output = "";   
-                continue;
+                System.out.println("output before clearing  "+ output);
+                output = "";
+                output = output + s.substring(i,i+1) ;
+                System.out.println("output after clearing  "+ output);
+                check = true;
             }
             else
             {
-                bb:
-                for(int j=0 ; j< output.length(); j++)
-                {
-                    if((s.substring(i-1,i)).equals(output.substring(j,j+1)))
-                    {
-                      temp.add(output);
-                       output = "";
-                        break bb;
-                    }
-                }
-                    output = output + s.substring(i-1,i);
+             output = output + s.substring(i,i+1);   
             }
-        }
-        
+        }   
         int longest=temp.get(0).length();
         int subString_count = temp.size();
+        System.out.println(temp);
+        
         if(subString_count>1)
         {
             for(int k=1;k <temp.size();k++)
@@ -42,8 +45,78 @@ public class longestSubstring {
                 {
                     longest =(temp.get(k)).length() ;
                 }
+                
             }
         }
         System.out.println(longest);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import java.util.ArrayList;
+
+// public class longestSubstring {
+//     public static void main(String args[]) {
+//         String s= "pwwkew1";
+//         String output = "";
+//         ArrayList<String> temp = new ArrayList<String>();
+//         Boolean check = true;
+//         aa:
+//         for(int i=1; i< s.length(); i++)
+//         {
+//             if(((s.substring(i,i+1)).equals(s.substring(i-1,i))))
+//             {
+//                 output = output + s.substring(i-1,i);
+//                 temp.add(output);
+//                 output = "";   
+//                 continue;
+//             }
+//             else
+//             {
+//                 bb:
+//                 for(int j=0 ; j< output.length(); j++)
+//                 {
+//                     if((s.substring(i-1,i)).equals(output.substring(j,j+1)))
+//                     {
+//                       temp.add(output);
+//                        output = "";
+//                         break bb;
+//                     }
+//                 }
+//                     output = output + s.substring(i-1,i);
+//             }
+//         }
+        
+//         int longest=temp.get(0).length();
+//         int subString_count = temp.size();
+//         if(subString_count>1)
+//         {
+//             for(int k=1;k <temp.size();k++)
+//             {
+//                 if(((temp.get(k-1)).length() < (temp.get(k)).length()))
+//                 {
+//                     longest =(temp.get(k)).length() ;
+//                 }
+//             }
+//         }
+//         System.out.println(longest);
+//     }
+// }
