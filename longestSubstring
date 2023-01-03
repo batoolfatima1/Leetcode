@@ -1,56 +1,79 @@
-import java.util.ArrayList;
-
-public class MyClass {
-    public static void main(String args[]) {
-        //String s= "abcabcbb";
-        String s = "pwwkew";
-        String output = s.substring(0,1);
-        ArrayList<String> temp = new ArrayList<String>();
-        Boolean check = true;
-        aa:
-        for(int i=1; i< s.length(); i++)
+class Solution {
+    public int lengthOfLongestSubstring(String s) 
+    { 
+        int max_length =0;
+        for( int i=0; i< s.length(); i++)
         {
-            bb:
-            for(int j=0 ; j<output.length(); j++)
+            StringBuilder str = new StringBuilder();
+            for(int j=i; j< s.length(); j++)
             {
-                if((s.substring(i,i+1)).equals(output.substring(j,j+1)))
+                if(str.indexOf(String.valueOf(s.charAt(j))) != -1)
                 {
-                    check = false;
-                    break bb;
+                    break;
                 }
-            }
-            if(check == false)
-            {
-                temp.add(output);
-                System.out.println("output before clearing  "+ output);
-                output = "";
-                output = output + s.substring(i,i+1) ;
-                System.out.println("output after clearing  "+ output);
-                check = true;
-            }
-            else
-            {
-             output = output + s.substring(i,i+1);   
-            }
-        }   
-        int longest=temp.get(0).length();
-        int subString_count = temp.size();
-        System.out.println(temp);
-        
-        if(subString_count>1)
-        {
-            for(int k=1;k <temp.size();k++)
-            {
-                if(((temp.get(k-1)).length() < (temp.get(k)).length()))
+                else
                 {
-                    longest =(temp.get(k)).length() ;
+                    str.append(s.charAt(j));
+                    max_length = Math.max(max_length, str.length());
                 }
-                
             }
         }
-        System.out.println(longest);
+        return max_length;
     }
 }
+// import java.util.ArrayList;
+
+// public class MyClass {
+//     public static void main(String args[]) {
+//         //String s= "abcabcbb";
+//         String s = "pwwkew";
+//         String output = s.substring(0,1);
+//         ArrayList<String> temp = new ArrayList<String>();
+//         Boolean check = true;
+//         aa:
+//         for(int i=1; i< s.length(); i++)
+//         {
+//             bb:
+//             for(int j=0 ; j<output.length(); j++)
+//             {
+//                 if((s.substring(i,i+1)).equals(output.substring(j,j+1)))
+//                 {
+//                     check = false;
+//                     break bb;
+//                 }
+//             }
+//             if(check == false)
+//             {
+//                 temp.add(output);
+//                 System.out.println("output before clearing  "+ output);
+//                 output = "";
+//                 output = output + s.substring(i,i+1) ;
+//                 System.out.println("output after clearing  "+ output);
+//                 check = true;
+//             }
+//             else
+//             {
+//              output = output + s.substring(i,i+1);   
+//             }
+//         }   
+//         int longest=temp.get(0).length();
+//         int subString_count = temp.size();
+//         System.out.println(temp);
+        
+//         if(subString_count>1)
+//         {
+//             for(int k=1;k <temp.size();k++)
+//             {
+//                 if(((temp.get(k-1)).length() < (temp.get(k)).length()))
+//                 {
+//                     longest =(temp.get(k)).length() ;
+//                 }
+                
+//             }
+//         }
+//         System.out.println(longest);
+//     }
+// }
 
 
 
