@@ -9,11 +9,46 @@ public static void main(String[] args)
     // nums1+nums2 =[1,2,3,4,5,6,6,7,8,9,10]
     // median = 6
 
-    int nums1[] = {1,3,4,5};
-    int nums2[] = {2} ; 
+    int nums1[] = {};
+    int nums2[] = {2,3,4} ; 
 
     // nums2 should be smaller than nums1 else swap
 
+    if(nums1.length ==0 && nums2.length !=0)
+        {
+            if(nums2.length %2 ==0)
+            { 
+                int x = nums2.length /2;
+                float y = (float)nums2[x]+nums2[x-1];
+                y = y/2;
+                System.out.println("Median = "+y);
+                return ;
+            }
+            else
+            {
+                int x = nums2.length /2;
+                System.out.println("Median = "+ (float)nums2[x]);
+                return;
+            }
+        }
+        if(nums2.length ==0 && nums1.length !=0)
+        {
+            if(nums1.length %2 ==0)
+            { 
+                int x = nums1.length /2;
+                float y = (float)nums1[x]+nums1[x-1];
+                y = y/2;
+                System.out.println("Median = "+y);
+                return ;
+            }
+            else
+            {
+                int x = nums1.length /2;
+                
+                System.out.println("Median = "+ (float)nums1[x]);
+                return ;
+            }
+        }
     if(nums1.length < nums2.length)
     {
         int temp[] = nums1;
