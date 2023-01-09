@@ -7,7 +7,7 @@ public class Test {
          int x= 4/0;
          return x;
      }
-     catch (Excep tion e)
+     catch (Exception e)
      {
      System.out.println("catch");
      }
@@ -16,6 +16,7 @@ public class Test {
          System.out.println("finally");
          return 88;
      } 
+     
     }
   public static void main(String[] args)
    {
