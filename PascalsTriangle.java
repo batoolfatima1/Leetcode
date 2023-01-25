@@ -11,6 +11,7 @@ public class PascalsTriangle {
            //l.add(1);
            return 1;
         }
+
         else
         {
             return pascal(i-1,j-1)+pascal(i-1,j); 
@@ -30,9 +31,9 @@ public class PascalsTriangle {
             output.add(l);
         }
 
-        for(List<Integer> i : output)
+        for(List<Integer> l : output)
         {
-            System.out.println(i);
+            System.out.println(l);
         }
     }
 }
