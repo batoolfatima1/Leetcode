@@ -9,6 +9,7 @@ public class CycleInLinkedList {
      }
     public boolean hasCycle(ListNode head)
     {
+       
         // brute force solution
         // it will work only if list has unique elements
 
