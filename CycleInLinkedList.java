@@ -6,6 +6,8 @@ public class CycleInLinkedList {
              val = x;
              next = null;
          }
+
+         
      }
     public boolean hasCycle(ListNode head)
     {
