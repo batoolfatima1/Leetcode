@@ -1,4 +1,4 @@
-public class ReshapeMatrix{
+public class ReshapeMatrix {
     
         public int[][] matrixReshape(int[][] mat, int r, int c)
          {
