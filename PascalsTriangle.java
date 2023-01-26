@@ -45,9 +45,7 @@ public class PascalsTriangle {
         {
             System.out.println(l);
         }
-
-
-
+        
         // List<List<Integer>> output = new ArrayList<List<Integer>>();
         // for(int i=0; i<numRows; i++)
         // {
