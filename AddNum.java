@@ -21,12 +21,12 @@
         int val1 = (l1!=null)? l1.val:0;
         int val2 = (l2!=null)? l2.val:0;
 
-         int current_sum = val1 + val2 +carry;
-         carry = current_sum/10;
-         int current_node_value = current_sum%10;
+        int current_sum = val1 + val2 +carry;
+        carry = current_sum/10;
+        int current_node_value = current_sum%10;
 
-         ListNode temp = new ListNode(current_node_value);
-         result.next = temp;
+        ListNode temp = new ListNode(current_node_value);
+        result.next = temp;
 
          //result.value= current_node_value;
 
