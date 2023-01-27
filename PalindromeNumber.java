@@ -11,6 +11,7 @@ public class PalindromeNumber {
         StringBuilder s2 = new StringBuilder().append(s1).reverse();
         System.out.println(s2);
 
+        
         // if(Integer.parseInt(s1.toString()) == Integer.parseInt(s2.toString()))
         // {
         //     ans = true;
