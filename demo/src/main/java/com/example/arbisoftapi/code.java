@@ -6,7 +6,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;  
 import org.json.simple.JSONValue;
 
-import javafx.scene.chart.PieChart.Data;
 import netscape.javascript.JSException;
 
 import java.util.*;
