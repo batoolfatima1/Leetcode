@@ -16,6 +16,7 @@ public class RemoveLinkedListElement {
              ListNode(int val) { this.val = val; }
              ListNode(int val, ListNode next) { this.val = val; this.next = next; }
              }
+
         public ListNode removeElements(ListNode head, int val)
         {
            ListNode output = new ListNode(0); // list node with val=0
@@ -24,7 +25,7 @@ public class RemoveLinkedListElement {
     
            ListNode dummy = output; // we'll make changes in this dummy so they eventually get stored in our output
     
-           while(dummy.next != null)
+           while(dummy.next != null) // dummy.next is being checked cux list must have 1 element that is 0 as we khudi intialise it otherwise dummy should be checked
            {
                if(dummy.next.val == val)
                {
@@ -40,10 +41,4 @@ public class RemoveLinkedListElement {
         return output.next; // .next is used to omit the starting 0 we used for initialization
         }
 
-
-        // public static void main(String[] args) {
-        //    ListNode l = new ListNode();
-        //    l = insert(l,1);
-
-        // }
 }

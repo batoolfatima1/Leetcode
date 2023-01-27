@@ -17,16 +17,6 @@ public class ReverseLinkedListIterative {
             return head;
         }
         
-        // // i assume that i got reversed list from elements above my position
-
-        // ListNode newHead = reverseList(head.next);
-        // head.next.next = head;
-        // head.next = null;
-        // return newHead;
-
-
-        // iterative method
-
         ListNode previous = head;
         ListNode current = head.next;
 
