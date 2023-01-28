@@ -1,6 +1,7 @@
 package DesignPatternsInJava.CreationalDesignPattern.Singelton;
 // only one object of a class is created as each time new object is crested same hashcode is returning
 // private constructor means can't directly construct object of this class
+// pnly getter no setter
 public class Main 
 {
     public static void main(String[] args) {
